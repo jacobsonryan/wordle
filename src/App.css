@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #121213;
+	text-transform: uppercase;
+	font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+	color: #D7DADC;
+	font-size: 30px;
+	letter-spacing: 4px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+	right: 1000px;
+	position: absolute;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: #121213;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.guesses {
+	display: grid;
+	grid-template-columns: repeat(5, 58px);
+	grid-gap: 9px;
+	grid-template-rows: repeat(6, 58px);
 }
 
-.App-link {
-  color: #61dafb;
+p {
+	height: 58px;
+	background-color: #121213;
+	width: 58px;
+	display: flex;
+	color: #D7DADC;
+	justify-content: center;
+	align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.empty{
+	z-index: -1;
+	position: absolute;
+	display: grid;
+	grid-template-columns: repeat(5, 58px);
+	grid-template-rows: repeat(6, 58px);
+	grid-gap: 9px;
 }
+
+.warning{
+	position: absolute;
+	top: 250px;
+	font-size: 15px;
+	width: 160px;
+	border-radius: 5px;
+	margin: 0 auto;
+	height: 50px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-color: white;
+}
+
+.warning p {
+	width: 100%;
+	color: black;
+	text-transform: capitalize;
+}
+
+.animate {
+  animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: #3a3a3c; 
+	transform: rotateX(90deg);
+  animation-name: my-animation;
+	transition: background-color 500ms ease-in;
+}
+
+.shaking {
+	animation-duration: 0.25s;
+	animation-name: shake;
+	transition: background-color;
+	transition-delay: 150ms;
+	transition-duration: 500ms;
+}
+
+@keyframes my-animation {
+	0% {transform: rotateX(90deg)}
+	100% {transform: rotateX(0deg);}
+}
+
+@keyframes shake {
+	0% {transform: scale(1.12);}
+	100% {transform: scale(1);}
+}
+
