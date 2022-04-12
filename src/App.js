@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import Words from './words.json'
+import Words from './allwords.json'
 function App() {
 	const [input, setInput] = useState('')
 	const [word, setWord] = useState([])
@@ -60,7 +60,7 @@ function App() {
 			</form>
 			<div className='guesses'>
 				{guesses.map((word, index) => {
-					return <p key={index} className='animate' style={{border: '2px solid ' + word.color, backgroundColor: word.color, animationDelay: (index % 5) * 0.40 + 's'}}>{word.letter}</p>
+					return <p key={index} className='animate' style={{border: '2px solid ' + word.color, backgroundColor: word.color, animationDelay: (index % 5) * 0.10 + 's'}}>{word.letter}</p>
 				})}
 				{[...input].map((letter, index) => {
 					return <p key={index} className='shaking' style={{border: '2px solid #565758'}}>{letter}</p>
